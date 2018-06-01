@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
+import { withStyles } from '@material-ui/core';
 
 import { fetchPostsIfNeeded } from './redux/Actions';
 import rootReducer from './redux/Reducers';
@@ -20,11 +21,21 @@ const store = createStore(
     )
 )
 
-class App extends React.Component<{}, {}> {
+const styles: any = {
+    body: {
+        backgroundColor: 'lightblue'
+    }
+}
+
+interface AppProps {
+    classes: any
+}
+
+class App extends React.Component<AppProps, {}> {
     render() {
         return (
             <Provider store={store}>
-                <div id='app'>
+                <div id='app' className={this.props.classes.body}>
                     <SearchBox />
                     <List />
                 </div>
@@ -33,4 +44,4 @@ class App extends React.Component<{}, {}> {
     }
 }
 
-export default App;
+export default withStyles(styles)(App);
