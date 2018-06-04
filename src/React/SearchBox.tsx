@@ -4,7 +4,6 @@ import { withStyles, FormControl, Input, InputAdornment, Button } from '@materia
 import { Search } from '@material-ui/icons';
 
 import { fetchPostsIfNeeded } from '../redux/Actions';
-//import * as Style from './SearchBox.css';
 
 const styles:any = {
     form: {
@@ -17,7 +16,7 @@ const styles:any = {
     button: {
         marginLeft: '10px'
     }
-}
+};
 
 interface SearchBoxProps {
     searchReddit: (subreddit: string) => void,
