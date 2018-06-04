@@ -9,7 +9,10 @@ const styles:any = {
         marginBottom: '10px',
     },
     post: {
-        marginBottom: '10px'
+        margin: '10px 10px 10px 10px'
+    },
+    text: {
+        margin: '5px 5px 5px 5px'
     }
 }
 
@@ -28,13 +31,13 @@ class _List extends React.Component<ListProps, ListState> {
         return (
             <div key={index} className={this.props.classes.post}>
                 <Paper elevation={3}>
-                    <Typography variant="headline" component="h3">
+                    <Typography variant="headline" component="h3" className={this.props.classes.text}>
                         Author: {author}
                     </Typography>
-                    <Typography variant="subheading" component="h5">
+                    <Typography variant="subheading" component="h5" className={this.props.classes.text}>
                         URL: {url}
                     </Typography>
-                    <Typography variant="caption" component="p">
+                    <Typography variant="caption" component="p" className={this.props.classes.text}>
                         {selfText}
                     </Typography>
                 </Paper>
